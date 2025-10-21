@@ -47,7 +47,6 @@ public class Game {
 				break; 
 			}
 			current = (current == white) ? black : white;
-			break;
 		}
 		
 	}
@@ -76,4 +75,5 @@ public class Game {
 		}
 		
 	}
+	
 }

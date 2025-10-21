@@ -8,9 +8,8 @@ public class Queen extends Piece {
 		super(color, rank, file);
 	}
 
-	
 	@Override 
 	public String toString() {
-		return "Q";	
+		return "Q"; 
 	}
 }

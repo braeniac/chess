@@ -11,7 +11,6 @@ import pieces.Piece;
 import pieces.Queen;
 import pieces.Rook;
 import player.Player;
-import game.GameState;
 
 public class Board {
 	
@@ -41,7 +40,7 @@ public class Board {
 		for (int i=0; i<rank; i++) {
 			for (int j=0; j<file; j++) {
 				Color color = (i+j) % 2 == 0 ? Color.W : Color.B;
-				board[i][j] = new Tile(color, i, j);
+				board[j][i] = new Tile(color, i, j);
 			}
 		}	
 		//populate chess board
@@ -50,12 +49,16 @@ public class Board {
 	
 	public void performMove(String From, String To, Player current) {
 		
+		int fromi = (int)From.charAt(0) - 'a'; 
+		int fromj = From.charAt(1) - '0' - 1 ;
 		
-	
-	
+		int toi = (int)To.charAt(0) - 'a'; 
+		int toj = To.charAt(1) - '0' - 1; 
+		
+		Tile fromTile = board[fromj][fromi]; 
+		Tile toTile = board[toj][toi]; 
+		
 	}
-	
-
 	
 	private void populateChessBoard() {	
 		

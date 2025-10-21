@@ -19,7 +19,7 @@ public class Tile {
 		this.piece = null;
 		this.rank = rank; 
 		this.file = file;
-		this.label = " " + (char)('a' + this.rank) + ((int)(1+this.file));
+		this.label = " " + (char)('a' + this.rank) + ((int)(this.file+1));
 	}
 	
 
@@ -40,9 +40,24 @@ public class Tile {
 		this.status = Status.O;
 	}
 	
+	public void removePiece() {
+		this.piece = null;
+		this.status = Status.E;
+	}
+	
 	public Piece getPiece() {
 		return this.piece; 
 	}
+
+
+	@Override
+	public String toString() {
+		return "Tile [color=" + color + ", status=" + status + ", rank=" + rank + ", file=" + file + ", label=" + label
+				+ ", piece=" + piece + "]";
+	}
+	
+	
+
 	
 	
 
