@@ -8,12 +8,13 @@ public class Piece {
 	private int rank; 
 	private int file; 
 	
+	private boolean hasMoved; 
+	
 	public Piece(final Color color, final int rank, final int file) {
 		this.color = color; 
 		this.rank = rank; 
 		this.file = file; 
+		hasMoved = false; 
 	}
 	
-
-
 }

@@ -11,6 +11,7 @@ import pieces.Piece;
 import pieces.Queen;
 import pieces.Rook;
 import player.Player;
+import game.GameState;
 
 public class Board {
 	
@@ -47,11 +48,14 @@ public class Board {
 		populateChessBoard(); 
 	}
 	
-	public void makeTurn(Player player) {
+	public void performMove(String From, String To, Player current) {
 		
-		player.parseMove();
 		
+	
+	
 	}
+	
+
 	
 	private void populateChessBoard() {	
 		
@@ -140,22 +144,23 @@ public class Board {
 	}
 	
 	public void display() {
+		
 		for (int i=rank-1; i>=0; i--) {
 			for (int j=0; j<file; j++) {
-				
-				if (j== 0) {
-					System.out.print(RED+(i+1) + "   "+RESET);
-				}
 				
 				if (board[i][j].getStatus() == Status.O) {					
 					System.out.print(board[i][j].getPiece().toString() + "  ");  
 				} else {
 					System.out.print("-" + "  ");  
 				}
+				
+				if (j==7) {
+					System.out.print(RED+(i+1) + "   "+RESET);
+				}
 			}
 			System.out.println(" \n"); 
 		}
-	    System.out.println(RED+"    a  b  c  d  e  f  g  h"+RESET);
+	    System.out.println(RED+"a  b  c  d  e  f  g  h"+RESET);
 	}
 	
 	public ArrayList<Piece> getBlackPieces() {

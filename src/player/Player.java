@@ -3,31 +3,22 @@ package player;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import board.Color;
+import game.GameState;
+
 import pieces.Piece;
 
 public class Player {
 	
+	private final Color color; 
 	private ArrayList<Piece> playable; 
 	private ArrayList<Piece> removed;
 	private Scanner scanner;
 	
-	public Player() {
-		scanner = new Scanner(System.in);	
-		removed = null;
-	}
+	public Player(final Color color) { 
+		this.color = color; 
+	} 
 	
-	public void parseMove() {
-		System.out.print("> "); 
-		String input = scanner.nextLine().toLowerCase(); 
-		String[] res = input.trim().split(","); 
-		
-		for (int i=0; i<res.length; i++) {
-			System.out.println(res[i].trim()); 
-		}
-		
-		
-	}
-
 	public void setPlayablePieces(ArrayList<Piece> playable) {
 		this.playable = playable; 
 	}
@@ -36,6 +27,14 @@ public class Player {
 		return this.playable; 
 	}
 	
+	public Color getColor() {
+		return this.color; 
+	}
+	
+	@Override
+	public String toString() {
+		return (color == Color.B) ? "Black" : "White"; 
+	}
 	 
 
 }
