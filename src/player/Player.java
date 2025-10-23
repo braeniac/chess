@@ -23,8 +23,18 @@ public class Player {
 		this.playable = playable; 
 	}
 	
+	
 	public ArrayList<Piece> getPlayablePieces() {
 		return this.playable; 
+	}
+	
+	public void removePlayablePiece(Piece piece) { 
+		playable.remove(piece); 
+		removed.add(piece); 
+	}
+	
+	public ArrayList<Piece> getNonPlayablePieces() {
+		return this.removed;
 	}
 	
 	public Color getColor() {

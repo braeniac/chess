@@ -17,4 +17,7 @@ public class Piece {
 		hasMoved = false; 
 	}
 	
+	public Color getColor() {
+		return this.color; 
+	}	
 }

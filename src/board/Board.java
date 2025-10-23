@@ -58,6 +58,30 @@ public class Board {
 		Tile fromTile = board[fromj][fromi]; 
 		Tile toTile = board[toj][toi]; 
 		
+		//validate move 
+		Piece currPiece = fromTile.getPiece(); 
+		
+		//make sure currPiece belongs to current player
+		
+		//validate move 
+			// make sure currPiece follows its respective piece rules
+		
+		//make the move 
+			//does this move cause a collision
+			//if yes:
+				//take remove opponents piece 
+				//put currPiece in its place
+				//remove opponents piece players avail pieces 
+		
+	}
+	
+	private boolean validateMove() {
+		return true; 
+	}
+	
+	public void makeMove() { 
+		
+		
 	}
 	
 	private void populateChessBoard() {	
@@ -133,14 +157,14 @@ public class Board {
 		board[0][6].setPiece(nwr);
 		board[0][7].setPiece(rwr);
 				
-		board[1][0].setPiece(pa);
-		board[1][1].setPiece(pb);
-		board[1][2].setPiece(pc);
-		board[1][3].setPiece(pd);
-		board[1][4].setPiece(pe);
-		board[1][5].setPiece(pf);
-		board[1][6].setPiece(pg);
-		board[1][7].setPiece(ph);
+		board[1][0].setPiece(paw);
+		board[1][1].setPiece(pbw);
+		board[1][2].setPiece(pcw);
+		board[1][3].setPiece(pdw);
+		board[1][4].setPiece(pew);
+		board[1][5].setPiece(pfw);
+		board[1][6].setPiece(pgw);
+		board[1][7].setPiece(phw);
 				
 		//keep track of white players available pieces
 		Collections.addAll(whitePieces, rwl, nwl, bwl, wq, wk, bwr, rwr, paw, pbw, pcw, pdw, pew, pfw, pgw, phw);

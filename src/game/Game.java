@@ -40,7 +40,16 @@ public class Game {
 		while(gameState == GameState.IN_PROGRESS) {	
 			board.display(); 			
 			System.out.println("\n Please make a move (e.g. a2,a3): "); 
-			makeMove();
+			
+			
+			String[] move = makeMove();
+			if (move != null) {
+				String From = move[0]; 
+				String To = move[1]; 
+				board.performMove(From, To, current);
+			}
+			
+			
 			if (gameState == GameState.ABORTED) {
 				scanner.close();
 				Message.concedeMsg(current);
@@ -51,7 +60,7 @@ public class Game {
 		
 	}
 	
-	private void makeMove() {
+	private String[] makeMove() {
 		
 		while (true) {
 			System.out.print("> "); 
@@ -60,14 +69,13 @@ public class Game {
 			if (input.equals("q") || input.equals("quit")) { 
 				gameState = GameState.ABORTED; 
 				scanner.close(); 
-				return;
+				return null;
 			} 
 			input = input.replace("\\s+", ""); 
 			if (input.matches("^[a-h][1-8],?[a-h][1-8]$")) {
 				String from = input.substring(0,2); 
 				String to = input.substring(3,5); 
-				board.performMove(from, to, current);
-				return;
+				return new String[] { from, to };
 			} else {
 				System.out.println("Please try again..."); 
 			}

@@ -27,12 +27,20 @@ public class Tile {
 		return this.color; 
 	}
 	
+	public String getLabel() {
+		return this.label; 
+	}
+	
 	public Status getStatus() {
 		return this.status; 
 	}
 	
-	public String getLabel() {
-		return this.label; 
+	public boolean isEmpty() {
+		return (status == Status.E); 
+	}
+
+	public Piece getPiece() {
+		return this.piece; 
 	}
 	
 	public void setPiece(Piece piece) {
@@ -44,11 +52,6 @@ public class Tile {
 		this.piece = null;
 		this.status = Status.E;
 	}
-	
-	public Piece getPiece() {
-		return this.piece; 
-	}
-
 
 	@Override
 	public String toString() {
@@ -56,9 +59,4 @@ public class Tile {
 				+ ", piece=" + piece + "]";
 	}
 	
-	
-
-	
-	
-
 }
